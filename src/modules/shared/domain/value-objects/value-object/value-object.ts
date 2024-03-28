@@ -18,7 +18,7 @@ export abstract class ValueObject<T extends Primitives> {
     return this.value.toString()
   }
 
-  private validateValue(value: Primitives) {
+  private validateValue(value: T) {
     if (value === null || value === undefined) {
       throw new BadRequestError(ValueObject.invalidValueMessage())
     }
