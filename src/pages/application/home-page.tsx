@@ -1,5 +1,5 @@
+import { Counter } from '@/app/home/components/counter'
 import viteLogo from '/vite.svg'
-import { Counter } from '@/app/components/sections/home-page/counter'
 
 export function HomePage() {
   return (
