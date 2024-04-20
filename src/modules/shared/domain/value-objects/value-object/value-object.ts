@@ -1,30 +1,30 @@
 import { BadRequestError } from '../../errors/bad-request-error'
 
-type Primitives = string | number | boolean | Date
+export type Primitives = string | number | boolean | Date
 
 export abstract class ValueObject<T extends Primitives> {
-  constructor(readonly value: T) {
-    this.validateValue(value)
+  constructor (readonly value: T) {
+    if (!this.isValueValid(value)) {
+      throw new BadRequestError(ValueObject.invalidValueMessage())
+    }
   }
 
-  equals(other: ValueObject<T>): boolean {
+  equals (other: ValueObject<T>): boolean {
     return (
       this.value === other.value ||
       this.constructor.name === other.constructor.name
     )
   }
 
-  toString() {
+  toString (): string {
     return this.value.toString()
   }
 
-  private validateValue(value: T) {
-    if (value === null || value === undefined) {
-      throw new BadRequestError(ValueObject.invalidValueMessage())
-    }
+  private isValueValid (value: T): boolean {
+    return value !== undefined && value !== null
   }
 
-  private static invalidValueMessage() {
+  static invalidValueMessage (): string {
     return 'El valor ingresado no está definido.'
   }
 }
