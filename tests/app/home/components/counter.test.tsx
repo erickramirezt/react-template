@@ -1,7 +1,7 @@
 import { expect, test } from 'vitest'
 import { render } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { Counter } from '@/app/home/components/counter'
+import { Counter } from '@/app/home-page/components/counter'
 
 
 test('counter', async () => {

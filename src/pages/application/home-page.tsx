@@ -1,4 +1,4 @@
-import { Counter } from '@/app/home/components/counter'
+import { Counter } from '@/app/home-page/components/counter'
 import viteLogo from '/vite.svg'
 
 export function HomePage() {
