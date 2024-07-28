@@ -27,6 +27,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "tests/app/components/sections/home-page", "tests/app/home/components/counter.test.tsx"],
+  "include": ["src", "tests/app/components/sections/home-page", "tests/app/home-page/components/counter.test.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
